@@ -1,0 +1,19 @@
+<div class="w-full p-2 bg-blue-800 flex">
+
+    <p>REVIEW</p>
+
+    <ul *ngIf="!(isAuthenticated$ | async)" class="text-white flex">
+        <li><a class="p-2" routerLink='/login'>Login</a></li>
+        <li><a class="p-2" routerLink='/register'>Register</a></li>
+    </ul>
+
+    <ul *ngIf="isAuthenticated$ | async" class="text-white flex">
+        <li><a class="p-2" routerLink='/platform/lists'>Lists</a></li>
+        <li><a class="p-2" routerLink='/platform/user'>User</a></li>
+        <li><a class="p-2" routerLink='/platform/profile'>Profile</a></li>
+        <li><button class="p-2">logout</button></li>
+    </ul>
+
+
+</div>
+
