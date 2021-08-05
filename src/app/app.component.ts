@@ -12,6 +12,6 @@ export class AppComponent implements OnInit{
   constructor(private _user:UserService) {}
 
   ngOnInit() {
-    this._user.purgeAuth()
+    this._user.populate()
   }
 }

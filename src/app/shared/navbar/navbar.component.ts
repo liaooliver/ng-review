@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../core/services/user.service';
+import { UserService,  } from '../../core/services/user.service';
 import { RxState } from '@rx-angular/state';
 
 @Component({
@@ -21,5 +21,9 @@ export class NavbarComponent extends RxState<{ authenticated: boolean }> impleme
     this._user.isAuthenticated.subscribe((res: boolean) => {
       this.set('authenticated', (s) => s.authenticated = res)
     })
+  }
+
+  logout(): void {
+    this._user.purgeAuth()
   }
 }

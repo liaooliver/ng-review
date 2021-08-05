@@ -1,4 +1,4 @@
-<div class="w-full p-2 bg-blue-800 flex">
+<div class="w-full p-2 bg-blue-800 flex justify-between">
 
     <p>REVIEW</p>
 
@@ -7,13 +7,13 @@
         <li><a class="p-2" routerLink='/register'>Register</a></li>
     </ul>
 
-    <ul *ngIf="isAuthenticated$ | async" class="text-white flex">
+    <ul *ngIf="isAuthenticated$ | async" class="text-white flex items-center">
         <li><a class="p-2" routerLink='/platform/lists'>Lists</a></li>
         <li><a class="p-2" routerLink='/platform/user'>User</a></li>
         <li><a class="p-2" routerLink='/platform/profile'>Profile</a></li>
-        <li><button class="p-2">logout</button></li>
+        <li><a class="p-2" routerLink='/platform'>Platform</a></li>
+        <li><button class="p-2 bg-blue-300 rounded-md text-blue-900" (click)="logout()">logout</button></li>
     </ul>
-
 
 </div>
 

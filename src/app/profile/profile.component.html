@@ -1,3 +1,7 @@
 <p>
   profile works!
 </p>
+<div>
+  <p>name: {{ (personalProfile$ | async).username }}</p>
+  <p>email: {{ (personalProfile$ | async).email }}</p>
+</div>

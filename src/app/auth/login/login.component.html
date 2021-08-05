@@ -1,5 +1,15 @@
-<p>login works!</p>
+<div class="container mx-auto">
 
-<button class="p-2 bg-blue-400" (click)="login()">login</button>
-<a routerLink="/platform">pass</a>
-<a routerLink="/register">register</a>
+    <form [formGroup]="loginForm" class="flex justify-center flex-col w-64 mx-auto py-3" (ngSubmit)="login($event)">
+        
+        <input formControlName="email" class="border-gray-300 rounded-md mb-3" type="email" placeholder="Email">
+        <input formControlName="password" class="border-gray-300 rounded-md mb-3" type="password" placeholder="Password">
+        
+        <button type="submit" class="p-2 mb-3 bg-blue-400 rounded-md text-white hover:bg-blue-500">login</button>
+        
+        <div class="text-center">
+            <a class="hover:text-blue-600" routerLink="/register">Register</a>
+        </div>
+    </form>
+
+</div>
