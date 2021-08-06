@@ -1,16 +1,14 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ProfileResolverService } from './profile-resolver.service';
+import { ProfileResolver } from './profile-resolver.service';
 
 describe('ProfileResolverService', () => {
-  let service: ProfileResolverService;
+  let service: ProfileResolver;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(ProfileResolverService);
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({});
+    service = TestBed.inject(ProfileResolver);
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
+
 });

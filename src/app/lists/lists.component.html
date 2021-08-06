@@ -1,1 +1,19 @@
-<p>lists works!</p>
+<div class="p-5">
+  <table class="table-auto border-collapse border border-green-800 mx-auto">
+    <thead>
+      <tr>
+        <th class="border border-green-600">Title</th>
+        <th class="border border-green-600">Author</th>
+        <th class="border border-green-600">Views</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let table of table$ | async">
+        <td class="border border-green-600">{{ table.title }}</td>
+        <td class="border border-green-600">{{ table.author }}</td>
+        <td class="border border-green-600">{{ table.views }}</td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>

@@ -5,12 +5,10 @@ import { PlatformResolverService } from './platform-resolver.service';
 describe('PlatformResolverService', () => {
   let service: PlatformResolverService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({});
     service = TestBed.inject(PlatformResolverService);
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
+
 });

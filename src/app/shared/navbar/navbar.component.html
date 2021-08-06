@@ -3,15 +3,17 @@
     <p>REVIEW</p>
 
     <ul *ngIf="!(isAuthenticated$ | async)" class="text-white flex">
-        <li><a class="p-2" routerLink='/login'>Login</a></li>
-        <li><a class="p-2" routerLink='/register'>Register</a></li>
+        <li><a class="p-2 active:bg-blue-200 active:text-black" routerLink='/intro' routerLinkActive="router-link-active">About</a></li>
+        <li><a class="p-2 active:bg-blue-200 active:text-black" routerLink='/login' routerLinkActive="router-link-active">Login</a></li>
+        <li><a class="p-2 active:bg-blue-200 active:text-black" routerLink='/register' routerLinkActive="router-link-active">Register</a></li>
     </ul>
 
     <ul *ngIf="isAuthenticated$ | async" class="text-white flex items-center">
-        <li><a class="p-2" routerLink='/platform/lists'>Lists</a></li>
-        <li><a class="p-2" routerLink='/platform/user'>User</a></li>
-        <li><a class="p-2" routerLink='/platform/profile'>Profile</a></li>
-        <li><a class="p-2" routerLink='/platform'>Platform</a></li>
+        <li><a class="p-2 active:bg-blue-200 active:text-black router-link-active" routerLinkActive="router-link-active" routerLink='/intro'>About</a></li>
+        <li><a class="p-2 active:bg-blue-200 active:text-black" routerLinkActive="active" routerLink='/platform/lists'>Lists</a></li>
+        <li><a class="p-2 active:bg-blue-200 active:text-black" routerLinkActive="active" routerLink='/platform/user'>User</a></li>
+        <li><a class="p-2 active:bg-blue-200 active:text-black" routerLinkActive="active" routerLink='/platform/profile'>Profile</a></li>
+        <li><a class="p-2 active:bg-blue-200 active:text-black" routerLinkActive="active" routerLink='/platform'>Platform</a></li>
         <li><button class="p-2 bg-blue-300 rounded-md text-blue-900" (click)="logout()">logout</button></li>
     </ul>
 
