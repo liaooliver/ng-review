@@ -3,6 +3,7 @@
     <p>REVIEW</p>
 
     <ul *ngIf="!(isAuthenticated$ | async)" class="text-white flex">
+        <li><a class="p-2 active:bg-blue-200 active:text-black" routerLink='/home' routerLinkActive="router-link-active">Home</a></li>
         <li><a class="p-2 active:bg-blue-200 active:text-black" routerLink='/intro' routerLinkActive="router-link-active">About</a></li>
         <li><a class="p-2 active:bg-blue-200 active:text-black" routerLink='/login' routerLinkActive="router-link-active">Login</a></li>
         <li><a class="p-2 active:bg-blue-200 active:text-black" routerLink='/register' routerLinkActive="router-link-active">Register</a></li>

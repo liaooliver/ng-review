@@ -12,21 +12,35 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
       {
-        path: '',
-        component: ContentComponent
-      },
-      {
         path: 'login',
-        component: LoginComponent
+        component: LoginComponent,
+        data:{
+          animation: 'LoginPage'
+        }
       },
       {
         path: 'register',
-        component: RegisterComponent
+        component: RegisterComponent,
+        data:{
+          animation: 'RegisterPage'
+        }
       },
       {
         path: 'intro',
         loadChildren: () => import('../introduct/introduct.module').then(m => m.IntroductModule)
-      }
+      },
+      {
+        path: 'home',
+        component: ContentComponent,
+        data: {
+          animation: 'ContentPage'
+        }
+      },
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: '/home'
+      },
     ]
   }
 ];

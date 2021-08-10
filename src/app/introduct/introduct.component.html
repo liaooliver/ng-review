@@ -1,3 +1,7 @@
 <p class="head">introduct works!</p>
 <button class="button" (click)="showContent()">showContent</button>
 <div class="detail" *ngIf="isOpen">Hello detail .....</div>
+<a class="border border-green-700 bg-green-500 p-2 rounded" [routerLink]="['/intro', 'foo']" [queryParams]="{query: '423'}">apple</a>
+<a class="border border-green-700 bg-green-500 p-2 rounded" [routerLink]="['/intro', 'bbb']" [queryParams]="{query: 'frw'}">orange</a>
+<a class="border border-green-700 bg-green-500 p-2 rounded" [routerLink]="['/intro', 'ccc']" [queryParams]="{query: 'gbn'}">banna</a>
+<router-outlet></router-outlet>

@@ -30,7 +30,7 @@ export class UserService {
       })
       this.isAuthenticatedSubject.next(true)
     } else {
-     this.purgeAuth() 
+      this.purgeAuth() 
     }
   }
 

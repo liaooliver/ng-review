@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { IntroductRoutingModule } from './introduct-routing.module';
 import { IntroductComponent } from './introduct.component';
+import { RouterQueryComponent } from './components/router-query/router-query.component';
 
 
 @NgModule({
   declarations: [
-    IntroductComponent
+    IntroductComponent,
+    RouterQueryComponent
   ],
   imports: [
     CommonModule,
