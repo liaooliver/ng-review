@@ -28,4 +28,6 @@ export class ApiService {
     return this._http.delete(`${environment}${path}`)
   }
 
+  
+
 }
