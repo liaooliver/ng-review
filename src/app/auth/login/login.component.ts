@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
-import { UserService } from '../../core/services/user.service';
-import { JwtService } from '../../core'
+// import { UserService } from '../../core/services/user.service';
+import { JwtService, ApiService, UserService } from '../../core'
 
 @Component({
   selector: 'app-login',
@@ -19,7 +19,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private _user: UserService,
     private _router: Router,
-    private _jwt: JwtService
+    private _jwt: JwtService,
+    private _api: ApiService
   ) { }
 
   ngOnInit(): void {
@@ -27,10 +28,16 @@ export class LoginComponent implements OnInit {
 
   login(e) {
     e.preventDefault()
-    this._user.setAuth().subscribe(res => {
-      this._router.navigate(['/'])
-      this._jwt.saveToken('fy79575*@74#23')
-    })
+    // console.log(this.loginForm.value)
+    const payload = { user:this.loginForm.value }
+    
+    this._user.attempAuth(payload).subscribe(
+      data => this._router.navigate(['/']), 
+      error => {
+        // 帳號密碼錯誤處理
+        // console.log("帳號密碼錯誤處理", error)
+      }
+    )
   }
 
 }

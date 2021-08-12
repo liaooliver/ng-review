@@ -23,7 +23,7 @@ export class ListsComponent extends RxState<{ table: List[], isLoading: boolean 
   ngOnInit(): void {
     this.set({ isLoading: true })
     this._route.data.subscribe((data: { data: List[] }) => {
-      console.log("From List component: ", data)
+      // console.log("From List component: ", data)
       this.set({ table: data.data })
       this.set({ isLoading: false })
     })

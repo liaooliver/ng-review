@@ -11,7 +11,7 @@ import { Observable, of } from 'rxjs';
 })
 export class IntroductResolver implements Resolve<boolean> {
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
-    console.log("from resolve => ", route)
+    // console.log("from resolve => ", route)
     return of(true);
   }
 }

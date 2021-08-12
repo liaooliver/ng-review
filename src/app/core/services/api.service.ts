@@ -13,21 +13,18 @@ export class ApiService {
   ) { }
 
   get(path: string): Observable<any> {
-    return this._http.get(`${environment}${path}`)
+    return this._http.get(`http://${environment.domainURL}${path}`)
   }
 
   put(path: string, payload: Object = {}): Observable<any> {
-    return this._http.put(`${environment}${path}`, payload)
+    return this._http.put(`http://${environment.domainURL}${path}`, payload)
   }
 
   post(path: string, payload: Object = {}): Observable<any> {
-    return this._http.post(`${environment}${path}`, payload)
+    return this._http.post(`http://${environment.domainURL}${path}`, JSON.stringify(payload))
   }
 
   delete(path: string): Observable<any> {
-    return this._http.delete(`${environment}${path}`)
+    return this._http.delete(`http://${environment.domainURL}${path}`)
   }
-
-  
-
 }

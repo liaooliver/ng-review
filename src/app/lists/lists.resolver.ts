@@ -22,7 +22,7 @@ export class ListsResolver implements Resolve<boolean> {
     state: RouterStateSnapshot
   ): Observable<any> {
 
-    console.log("Lists Resolve is Working!!!", "state => ", state, "route => ", route)
+    // console.log("Lists Resolve is Working!!!", "state => ", state, "route => ", route)
     return this._mockList.mockHttpClient()
   }
 }

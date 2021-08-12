@@ -20,7 +20,7 @@ export class AuthGuard implements CanActivate {
   }
 
   verifyToken(islogin): boolean | UrlTree{
-    console.log(this._user.getCurrentAuthenticate())
+    // console.log(this._user.getCurrentAuthenticate())
     if (!this._user.getCurrentAuthenticate()) {
       return this._router.parseUrl('/login')
     }

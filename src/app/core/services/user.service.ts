@@ -1,8 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, of, BehaviorSubject } from 'rxjs';
-import { distinctUntilChanged, tap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { User } from '../models/user.model';
 import { JwtService } from './jwt.service';
+import { ApiService } from './api.service';
+import { Store } from '@ngrx/store';
+import { setUser, removeUser } from '../store/currentUserReducer.action';
 
 
 @Injectable({
@@ -11,48 +15,58 @@ import { JwtService } from './jwt.service';
 export class UserService {
 
   public mockHttpClient: Observable<boolean> = of(true)
-
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(false)
   public isAuthenticated = this.isAuthenticatedSubject.asObservable()
 
-  private currentUserSubject = new BehaviorSubject<User>({} as User)
-  public currentUser = this.currentUserSubject.asObservable().pipe(distinctUntilChanged())
-
   constructor(
-    private _jwt: JwtService
-  ) {  }
+    private _jwt: JwtService,
+    private _api: ApiService,
+    private _router: Router,
+    private _store: Store<{ currnetUser: User }>
+  ) { }
 
   populate(): void {
+    // app have token send api get user info
     if (this._jwt.getToken()) {
-      this.currentUserSubject.next({
-        email: '123@gmail.com',
-        username: 'angular'
-      })
-      this.isAuthenticatedSubject.next(true)
+      this._api.get('/user').subscribe(
+        (data: { user: User, token: string }) => {
+          this.setAuth(data)
+        }, 
+        error => {
+          // token Expired handle
+          if(error.status === 403) {
+            this._router.navigate(["/login"])
+            this.purgeAuth()
+          }
+        }
+      );
     } else {
       this.purgeAuth() 
     }
   }
 
-  setAuth(): Observable<any> {
-    return this.mockHttpClient.pipe(tap(of => {
-      this.currentUserSubject.next({
-        email: '123@gmail.com',
-        username: 'angular'
-      })
-      this.isAuthenticatedSubject.next(of)
+  setAuth(data: { user:User, token: string }): void {
+    const { token, user } = data
+    this._store.dispatch(setUser(user))
+    this._jwt.saveToken(token)
+    this.isAuthenticatedSubject.next(true)
+  }
+
+  attempAuth(payload: {}): Observable<any> {
+    return this._api.post('/login', payload).pipe(map(data => {
+      this.setAuth(data)
+      return data
     }))
   }
 
-  purgeAuth() {
+  purgeAuth(): void {
+    // cancel auth pass
     this.isAuthenticatedSubject.next(false)
+    this._jwt.destroyToken()
+    this._store.dispatch(removeUser())
   }
 
-  getCurrentAuthenticate() {
+  getCurrentAuthenticate(): boolean {
     return this.isAuthenticatedSubject.getValue()
-  }
-
-  getCurrentUser(): User {
-    return this.currentUserSubject.value
   }
 }

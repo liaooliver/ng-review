@@ -7,24 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlatformComponent implements OnInit {
 
-  toggleBar: boolean = false;
-  toggleClass: string = 'w-16';
+  toggleBar: boolean = true;
 
-  constructor(
-    
-  ) { }
+  constructor( ) { }
 
-  ngOnInit(): void {
-    
+  ngOnInit(): void {}
+
+  toggle(event): void {
+    this.toggleBar = event
   }
-
-  toggle(): void {
-    this.toggleBar = !this.toggleBar
-    if (this.toggleBar){
-      this.toggleClass = 'w-60'
-    }else{
-      this.toggleClass = 'w-16'
-    }
-  }
-
 }

@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   }
 
   prepareRoute(outlet: RouterOutlet) {
-    // console.log("檢測路由的變化", outlet)
+    // // console.log("檢測路由的變化", outlet)
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
   }
 

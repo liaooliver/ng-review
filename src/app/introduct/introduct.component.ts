@@ -16,7 +16,7 @@ export class IntroductComponent implements OnInit {
 
   ngOnInit(): void {
     // this._route.data.subscribe(data => {
-    //   console.log(data.Resolver_data_name)
+    //   // console.log(data.Resolver_data_name)
     // })
   }
 
