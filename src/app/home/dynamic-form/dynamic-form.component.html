@@ -1,0 +1,41 @@
+<div class="p-3 bg-gray-300">
+
+    <div>
+        <button type="button" (click)="newfirstlevel()"></button>
+        <label>
+            firstName:
+            <input type="text" formControlName="firstName">
+        </label>
+        <label>
+            lastName:
+            <input type="text" formControlName="lastName">
+        </label>
+        <div class="p-3" formGroupName="address">
+            <h3>Address</h3>
+        
+            <label>
+                Street:
+                <input type="text" formControlName="street">
+            </label>
+        
+            <label>
+                City:
+                <input type="text" formControlName="city">
+            </label>
+        
+            <label>
+                State:
+                <input type="text" formControlName="state">
+            </label>
+        
+            <label>
+                Zip Code:
+                <input type="text" formControlName="zip">
+            </label>
+        </div>
+    </div>
+
+    
+
+
+</div>

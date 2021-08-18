@@ -5,6 +5,7 @@ import { HomeComponent } from './home.component';
 import { ContentComponent } from './content/content.component';
 import { LoginComponent } from '../auth/login/login.component';
 import { RegisterComponent } from '../auth/register/register.component';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
       {
         path: 'intro',
         loadChildren: () => import('../introduct/introduct.module').then(m => m.IntroductModule)
+      },
+      {
+        path: 'dynamicForm',
+        component: DynamicFormComponent
       },
       {
         path: 'home',

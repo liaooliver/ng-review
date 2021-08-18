@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { User } from '../../core'
+import { User, UserService } from '../../core'
 
 @Component({
   selector: 'app-sidebar',
@@ -16,6 +16,7 @@ export class SidebarComponent implements OnInit {
   user$: Observable<User>;
 
   constructor(
+    private _user: UserService,
     private store: Store<{ currentUser: User }>
   ) { 
     this.user$ = this.store.select('currentUser')
@@ -27,6 +28,10 @@ export class SidebarComponent implements OnInit {
   toggle(): void {
     this.toggleBar = !this.toggleBar
     this.toggleSideBar.emit(this.toggleBar)
+  }
+
+  logout(): void {
+    this._user.purgeAuth()
   }
 
 }

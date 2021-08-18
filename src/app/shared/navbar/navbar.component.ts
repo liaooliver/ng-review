@@ -18,9 +18,7 @@ export class NavbarComponent extends RxState<{ authenticated: boolean }> impleme
   }
 
   ngOnInit(): void {
-    this._user.isAuthenticated.subscribe((res: boolean) => {
-      this.set('authenticated', (s) => s.authenticated = res)
-    })
+    this.connect('authenticated', this._user.isAuthenticated)
   }
 
   logout(): void {

@@ -62,6 +62,7 @@ export class UserService {
   purgeAuth(): void {
     // cancel auth pass
     this.isAuthenticatedSubject.next(false)
+    this._router.navigate(['/'])
     this._jwt.destroyToken()
     this._store.dispatch(removeUser())
   }

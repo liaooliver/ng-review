@@ -56,7 +56,7 @@
                     <div class="job text-sm">{{(user$ | async).position}}</div>
                 </div>
             </div>
-            <button class="animation logoutBtn" [class.active]="toggleBar">
+            <button type="button" class="animation logoutBtn" [class.active]="toggleBar" (click)="logout()">
                 <i class='bx bx-log-out'></i>
             </button>
         </div>
