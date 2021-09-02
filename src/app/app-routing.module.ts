@@ -6,12 +6,12 @@ const routes: Routes = [
   {
     path: 'platform',
     canActivate: [AuthGuard],
-    loadChildren: () => import('./platform/platform.module').then(m => m.PlatformModule),
-  }
+    loadChildren: () => import('./platform/platform.module').then((m) => m.PlatformModule),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -7,10 +7,6 @@ import { PlatformComponent } from './platform.component';
 
 @NgModule({
   declarations: [PlatformComponent],
-  imports: [
-    CommonModule,
-    PlatformRoutingModule,
-    SharedModule
-  ]
+  imports: [CommonModule, PlatformRoutingModule, SharedModule],
 })
-export class PlatformModule { }
+export class PlatformModule {}

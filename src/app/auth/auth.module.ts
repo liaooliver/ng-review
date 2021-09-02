@@ -10,14 +10,7 @@ import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [LoginComponent, RegisterComponent],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    RouterModule,
-    SharedModule
-  ],
-  providers: [
-    AuthGuard
-  ]
+  imports: [CommonModule, ReactiveFormsModule, RouterModule, SharedModule],
+  providers: [AuthGuard],
 })
-export class AuthModule { }
+export class AuthModule {}

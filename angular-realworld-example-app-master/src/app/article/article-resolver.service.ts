@@ -1,4 +1,4 @@
-import { Injectable, } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, Router, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 
@@ -13,12 +13,9 @@ export class ArticleResolver implements Resolve<Article> {
     private userService: UserService
   ) {}
 
-  resolve(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ): Observable<any> {
-
-    return this.articlesService.get(route.params['slug'])
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
+    return this.articlesService
+      .get(route.params['slug'])
       .pipe(catchError((err) => this.router.navigateByUrl('/')));
   }
 }

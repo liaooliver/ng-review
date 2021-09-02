@@ -10,6 +10,6 @@ import { EditorRoutingModule } from './editor-routing.module';
 @NgModule({
   imports: [SharedModule, EditorRoutingModule],
   declarations: [EditorComponent],
-  providers: [EditableArticleResolver]
+  providers: [EditableArticleResolver],
 })
 export class EditorModule {}

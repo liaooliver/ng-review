@@ -1,64 +1,124 @@
 <div class="sidebar animation" [class.active]="toggleBar">
-    <div class="logo_content">
-        <div class="logo animation" [class.active]="toggleBar">
-            <i class='bx bxl-javascript text-4xl mr-1 min-w-[50px]'></i>
-            <div class="logo_name text-lg font-semibold min-w-[110px]">Side Bar Lab</div>
-        </div>
-        <button class="menu" [class.active]="toggleBar" type="button" (click)="toggle()">
-            <i class='bx bx-menu text-4xl text-white'></i>
-        </button>
+  <div class="logo_content">
+    <div class="logo animation" [class.active]="toggleBar">
+      <i class="bx bxl-javascript text-4xl mr-1 min-w-[50px]"></i>
+      <div class="logo_name text-lg font-semibold min-w-[110px]">Side Bar Lab</div>
     </div>
-    <ul class="nav_list">
-        <!-- <li class="w-full h-12 leading-[48px] relative my-1">
+    <button class="menu" [class.active]="toggleBar" type="button" (click)="toggle()">
+      <i class="bx bx-menu text-4xl text-white"></i>
+    </button>
+  </div>
+  <ul class="nav_list">
+    <!-- <li class="w-full h-12 leading-[48px] relative my-1">
                 <a class="text-white w-full">
                     <i class='bx bx-search-alt-2 absolute z-50 h-12 w-12 min-w-[50px] leading-[48px] rounded text-2xl text-center'></i>
                     <input class="w-full rounded absolute left-0 top-0 outline-none bg-blue-800 border-0 pl-12 text-white" type="text" placeholder="Search...">
                 </a>
                 <span class="tooltip animation pointer-events-none" [class.active]="toggleBar">Dashboard</span>
             </li> -->
-        <li class="link group cursor-pointer">
-            <b class="hidden group-hover:block"></b>
-            <b class="hidden group-hover:block"></b>
-            <a [routerLink]="['/platform/profile']"
-                class="text-white flex items-center no-underline text-center rounded-l-lg group-hover:text-black group-hover:bg-white">
-                <i class='bx bxs-dashboard h-12 w-12 min-w-[50px] leading-[48px] rounded text-2xl text-center'></i>
-                <span class="link_name" [class.active]="toggleBar">profile</span>
-            </a>
-            <span class="tooltip animation pointer-events-none" [class.active]="toggleBar">profile</span>
-        </li>
-        <li class="link group cursor-pointer">
-            <b class="hidden group-hover:block"></b>
-            <b class="hidden group-hover:block"></b>
-            <a
-                class="relative text-white flex items-center no-underline text-center rounded-l-lg group-hover:text-black group-hover:bg-white">
-                <i class='bx bx-message-dots h-12 w-12 min-w-[50px] leading-[48px] rounded text-2xl text-center'></i>
-                <span class="link_name" [class.active]="toggleBar">message</span>
-            </a>
-            <span class="tooltip animation pointer-events-none" [class.active]="toggleBar">Dashboard</span>
-        </li>
-        <li class="link group cursor-pointer">
-            <b class="hidden group-hover:block"></b>
-            <b class="hidden group-hover:block"></b>
-            <a [routerLink]="['/platform/lists']"
-                class="text-white flex items-center no-underline text-centerx rounded-l-lg group-hover:text-black group-hover:bg-white">
-                <i class='bx bx-list-ul h-12 w-12 min-w-[50px] leading-[48px] rounded text-2xl text-center'></i>
-                <span class="link_name" [class.active]="toggleBar">List</span>
-            </a>
-            <span class="tooltip animation pointer-events-none" [class.active]="toggleBar">lists</span>
-        </li>
-    </ul>
-    <div class="profile_content">
-        <div class="animation profile">
-            <div class="animation profile_details" [class.active]="toggleBar">
-                <div class="inline-block w-12 h-12 bg-green-300 rounded"></div>
-                <div class="name_job ml-2">
-                    <div class="name text-md font-semibold">{{ (user$ | async).username }}</div>
-                    <div class="job text-sm">{{(user$ | async).position}}</div>
-                </div>
-            </div>
-            <button type="button" class="animation logoutBtn" [class.active]="toggleBar" (click)="logout()">
-                <i class='bx bx-log-out'></i>
-            </button>
+    <li class="link group cursor-pointer">
+      <b class="hidden group-hover:block"></b>
+      <b class="hidden group-hover:block"></b>
+      <a
+        [routerLink]="['/platform/profile']"
+        class="
+          text-white
+          flex
+          items-center
+          no-underline
+          text-center
+          rounded-l-lg
+          group-hover:text-black group-hover:bg-white
+        "
+      >
+        <i
+          class="
+            bx
+            bxs-dashboard
+            h-12
+            w-12
+            min-w-[50px]
+            leading-[48px]
+            rounded
+            text-2xl text-center
+          "
+        ></i>
+        <span class="link_name" [class.active]="toggleBar">profile</span>
+      </a>
+      <span class="tooltip animation pointer-events-none" [class.active]="toggleBar">profile</span>
+    </li>
+    <li class="link group cursor-pointer">
+      <b class="hidden group-hover:block"></b>
+      <b class="hidden group-hover:block"></b>
+      <a
+        class="
+          relative
+          text-white
+          flex
+          items-center
+          no-underline
+          text-center
+          rounded-l-lg
+          group-hover:text-black group-hover:bg-white
+        "
+      >
+        <i
+          class="
+            bx bx-message-dots
+            h-12
+            w-12
+            min-w-[50px]
+            leading-[48px]
+            rounded
+            text-2xl text-center
+          "
+        ></i>
+        <span class="link_name" [class.active]="toggleBar">message</span>
+      </a>
+      <span class="tooltip animation pointer-events-none" [class.active]="toggleBar"
+        >Dashboard</span
+      >
+    </li>
+    <li class="link group cursor-pointer">
+      <b class="hidden group-hover:block"></b>
+      <b class="hidden group-hover:block"></b>
+      <a
+        [routerLink]="['/platform/lists']"
+        class="
+          text-white
+          flex
+          items-center
+          no-underline
+          text-centerx
+          rounded-l-lg
+          group-hover:text-black group-hover:bg-white
+        "
+      >
+        <i
+          class="bx bx-list-ul h-12 w-12 min-w-[50px] leading-[48px] rounded text-2xl text-center"
+        ></i>
+        <span class="link_name" [class.active]="toggleBar">List</span>
+      </a>
+      <span class="tooltip animation pointer-events-none" [class.active]="toggleBar">lists</span>
+    </li>
+  </ul>
+  <div class="profile_content">
+    <div class="animation profile">
+      <div class="animation profile_details" [class.active]="toggleBar">
+        <div class="inline-block w-12 h-12 bg-green-300 rounded"></div>
+        <div class="name_job ml-2">
+          <div class="name text-md font-semibold">{{ (user$ | async).username }}</div>
+          <div class="job text-sm">{{ (user$ | async).position }}</div>
         </div>
+      </div>
+      <button
+        type="button"
+        class="animation logoutBtn"
+        [class.active]="toggleBar"
+        (click)="logout()"
+      >
+        <i class="bx bx-log-out"></i>
+      </button>
     </div>
+  </div>
 </div>

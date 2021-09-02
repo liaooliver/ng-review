@@ -4,19 +4,14 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-not-found',
   templateUrl: './not-found.component.html',
-  styleUrls: ['./not-found.component.scss']
+  styleUrls: ['./not-found.component.scss'],
 })
 export class NotFoundComponent implements OnInit {
+  constructor(private _router: Router) {}
 
-  constructor(
-    private _router: Router
-  ) { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   forwardToHome(): void {
-    this._router.navigate(['/'])
+    this._router.navigate(['/']);
   }
-
 }

@@ -1,98 +1,97 @@
+.animation {
+  @apply transition-all duration-500;
+}
 
-    .animation{
-        @apply transition-all duration-500
-    };
+.sidebar {
+  @apply w-20 h-full bg-blue-900 fixed top-0 left-0 pl-3;
+}
 
-    .sidebar{
-        @apply w-20 h-full bg-blue-900 fixed top-0 left-0 pl-3
-    };
+.sidebar.active {
+  @apply w-60;
+}
 
-    .sidebar.active{
-        @apply w-60
-    };
+.logo {
+  @apply text-white flex items-center h-14 w-full opacity-0;
+}
 
-    .logo{
-        @apply text-white flex items-center h-14 w-full opacity-0
-    };
+.logo.active {
+  @apply opacity-100;
+}
 
-    .logo.active{
-        @apply opacity-100
-    };
+.menu {
+  @apply absolute left-1/4 top-0 w-10 h-14 flex items-center text-center;
+}
 
-    .menu{
-        @apply absolute left-1/4 top-0 w-10 h-14 flex items-center text-center
-    };
+.menu.active {
+  @apply right-0 left-auto;
+}
 
-    .menu.active{
-        @apply right-0 left-auto
-    };
+.link {
+  @apply w-full h-12 leading-[48px] relative my-1 whitespace-nowrap;
+}
 
-    .link{
-        @apply w-full h-12 leading-[48px] relative my-1 whitespace-nowrap
-    };
+.link_name {
+  @apply opacity-0;
+}
 
-    .link_name{
-        @apply opacity-0
-    };
+.link_name.active {
+  @apply opacity-100;
+}
 
-    .link_name.active{
-        @apply opacity-100
-    };
+.tooltip {
+  @apply absolute w-28 h-8 leading-8 rounded text-center bg-white shadow left-32 top-0 opacity-0 group-hover:top-1/2 group-hover:opacity-100 transform -translate-y-1/2 -translate-x-1/2;
+}
 
-    .tooltip{
-        @apply absolute w-28 h-8 leading-8 rounded text-center bg-white shadow left-32 top-0 opacity-0 group-hover:top-1/2 group-hover:opacity-100 transform -translate-y-1/2 -translate-x-1/2
-    };
+.tooltip.active {
+  @apply hidden;
+}
 
-    .tooltip.active{
-        @apply hidden
-    };
+.profile_content {
+  @apply w-full absolute text-white bottom-0 left-0;
+}
 
-    .profile_content{
-        @apply w-full absolute text-white bottom-0 left-0
-    };
+.profile {
+  @apply relative px-3 py-2 h-16 bg-gray-700;
+}
 
-    .profile{
-        @apply relative px-3 py-2 h-16 bg-gray-700
-    };
+.profile_details {
+  @apply flex items-center opacity-0 whitespace-nowrap;
+}
 
-    .profile_details{
-        @apply flex items-center opacity-0 whitespace-nowrap
-    };
+.profile_details.active {
+  @apply opacity-100;
+}
 
-    .profile_details.active{
-        @apply opacity-100
-    };
+.logoutBtn {
+  @apply leading-[64px] text-center w-12 h-16 absolute bottom-1 text-xl;
+}
 
-    .logoutBtn{
-        @apply leading-[64px] text-center w-12 h-16 absolute bottom-1 text-xl
-    };
+.logoutBtn.active {
+  @apply right-2;
+}
 
-    .logoutBtn.active{
-        @apply right-2
-    };
+.content {
+  @apply flex-grow ml-20 p-2;
+}
 
-    .content{
-        @apply flex-grow ml-20 p-2
-    };
+.content.active {
+  @apply ml-60;
+}
 
-    .content.active{
-        @apply ml-60
-    };
+b:nth-child(1) {
+  @apply absolute w-full bg-white top-[-19px] h-[20px];
+}
 
-    b:nth-child(1){
-        @apply absolute w-full bg-white top-[-19px] h-[20px]
-    };
+b:nth-child(1)::before {
+  content: '';
+  @apply bg-blue-900 w-full h-full absolute top-0 left-0 rounded-br-lg;
+}
 
-    b:nth-child(1)::before{
-        content: "";
-        @apply bg-blue-900 w-full h-full absolute top-0 left-0 rounded-br-lg
-    };
+b:nth-child(2) {
+  @apply absolute w-full bg-white bottom-[-19px] h-[20px];
+}
 
-    b:nth-child(2){
-        @apply absolute w-full bg-white bottom-[-19px] h-[20px]
-    };
-
-    b:nth-child(2)::before{
-        content: "";
-        @apply bg-blue-900 w-full h-full absolute top-0 left-0 rounded-tr-lg
-    };
+b:nth-child(2)::before {
+  content: '';
+  @apply bg-blue-900 w-full h-full absolute top-0 left-0 rounded-tr-lg;
+}

@@ -5,21 +5,18 @@ import { JwtService } from '../services/jwt.service';
 
 @Injectable()
 export class HttpTokenInterceptor implements HttpInterceptor {
-  
-  constructor(
-    private _jwt: JwtService
-  ) {}
+  constructor(private _jwt: JwtService) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const headersConfig = {
       'Content-Type': 'application/json',
-      'Accept': 'application/json',
-      'test': 'header string test'
+      Accept: 'application/json',
+      test: 'header string test',
     };
     // console.log("FROM INTERCEPTOR => ", req)
-    const token: String = this._jwt.getToken()
+    const token: String = this._jwt.getToken();
 
-    if (token) headersConfig['Authorization'] = token
+    if (token) headersConfig['Authorization'] = token;
 
     const request = req.clone({ setHeaders: headersConfig });
 

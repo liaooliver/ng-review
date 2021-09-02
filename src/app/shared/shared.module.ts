@@ -8,24 +8,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
 
-
 @NgModule({
-  declarations: [
-    NotFoundComponent,
-    NavbarComponent,
-    SidebarComponent,
-    FooterComponent
-  ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    ReactiveFormsModule
-  ],
-  exports: [
-    NotFoundComponent,
-    NavbarComponent,
-    SidebarComponent,
-    FooterComponent
-  ]
+  declarations: [NotFoundComponent, NavbarComponent, SidebarComponent, FooterComponent],
+  imports: [CommonModule, RouterModule, ReactiveFormsModule],
+  exports: [NotFoundComponent, NavbarComponent, SidebarComponent, FooterComponent],
 })
-export class SharedModule { }
+export class SharedModule {}

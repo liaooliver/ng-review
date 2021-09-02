@@ -8,13 +8,13 @@ export const routes: Routes = [
     path: '',
     component: ListsComponent,
     resolve: {
-      data: ListsResolver
-    }
-  }
+      data: ListsResolver,
+    },
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class ListsRoutingModule { }
+export class ListsRoutingModule {}

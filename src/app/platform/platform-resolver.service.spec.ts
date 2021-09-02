@@ -9,6 +9,4 @@ describe('PlatformResolverService', () => {
     await TestBed.configureTestingModule({});
     service = TestBed.inject(PlatformResolverService);
   });
-
-
 });

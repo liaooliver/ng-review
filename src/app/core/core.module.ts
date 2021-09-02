@@ -7,20 +7,20 @@ import { JwtService } from './services/jwt.service';
 import { currentUserReducer } from './store/currentUser.reducer';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        HttpClientModule,
-        StoreModule.forRoot({
-            currentUser: currentUserReducer
-        })
-    ],
-    providers: [
-        JwtService,
-        {
-            provide: HTTP_INTERCEPTORS,
-            useClass: HttpTokenInterceptor,
-            multi: true
-        }
-    ],
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    StoreModule.forRoot({
+      currentUser: currentUserReducer,
+    }),
+  ],
+  providers: [
+    JwtService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpTokenInterceptor,
+      multi: true,
+    },
+  ],
 })
-export class CoreModule { }
+export class CoreModule {}

@@ -9,24 +9,24 @@ const routes: Routes = [
     children: [
       {
         path: 'profile',
-        loadChildren: () => import('../profile/profile.module').then(m => m.ProfileModule),
+        loadChildren: () => import('../profile/profile.module').then((m) => m.ProfileModule),
         data: {
-          animation: 'profile'
-        }
+          animation: 'profile',
+        },
       },
       {
         path: 'lists',
-        loadChildren: () => import('../lists/lists.module').then(m => m.ListsModule),
+        loadChildren: () => import('../lists/lists.module').then((m) => m.ListsModule),
         data: {
-          animation: 'lists'
-        }
-      }
-    ]
+          animation: 'lists',
+        },
+      },
+    ],
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class PlatformRoutingModule { }
+export class PlatformRoutingModule {}

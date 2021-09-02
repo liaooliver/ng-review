@@ -8,9 +8,8 @@ describe('PlatformComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PlatformComponent ]
-    })
-    .compileComponents();
+      declarations: [PlatformComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -18,6 +17,4 @@ describe('PlatformComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-
-
 });

@@ -5,15 +5,8 @@ import { RouterModule } from '@angular/router';
 import { ListsRoutingModule } from './lists-routing.module';
 import { ListsComponent } from './lists.component';
 
-
 @NgModule({
-  declarations: [
-    ListsComponent
-  ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    ListsRoutingModule,
-  ],
+  declarations: [ListsComponent],
+  imports: [CommonModule, RouterModule, ListsRoutingModule],
 })
-export class ListsModule { }
+export class ListsModule {}

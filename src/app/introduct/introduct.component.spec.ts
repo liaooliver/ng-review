@@ -8,9 +8,8 @@ describe('IntroductComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ IntroductComponent ]
-    })
-    .compileComponents();
+      declarations: [IntroductComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -27,13 +26,12 @@ describe('IntroductComponent', () => {
     const headHtml = fixture.nativeElement.querySelector('.head');
     const showHtml = fixture.nativeElement.querySelector('.detail');
     expect(headHtml.textContent).toEqual('introduct works!');
-    expect(showHtml).toBeNull()
+    expect(showHtml).toBeNull();
     expect(component.isOpen).toBeFalsy();
     const button = fixture.debugElement.nativeElement.querySelector('button');
     button.click();
     expect(component.isOpen).toEqual(true);
-    fixture.detectChanges()
+    fixture.detectChanges();
     expect(showHtml).toBeTruthy();
-
-  })
+  });
 });

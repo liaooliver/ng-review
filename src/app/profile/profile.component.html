@@ -1,10 +1,8 @@
-<p>
-  profile works!
-</p>
+<p>profile works!</p>
 <div>
   <p>name: {{ (personalProfile$ | async).username }}</p>
   <p>email: {{ (personalProfile$ | async).email }}</p>
-  <p>{{ (apiResponse$ | async) }}</p>
+  <p>{{ apiResponse$ | async }}</p>
   <div class="w-6 h-64 bg-green-700"></div>
   <div class="w-6 h-64 bg-yellow-700"></div>
   <div class="w-6 h-64 bg-pink-700"></div>

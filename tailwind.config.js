@@ -1,5 +1,5 @@
 module.exports = {
-  purge: ["./src/**/*.html", "./src/**/*.scss"],
+  purge: ['./src/**/*.html', './src/**/*.scss'],
   mode: 'jit',
   darkMode: false, // or 'media' or 'class'
   theme: {
@@ -10,7 +10,5 @@ module.exports = {
       backgroundColor: ['active'],
     },
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-  ],
-}
+  plugins: [require('@tailwindcss/forms')],
+};

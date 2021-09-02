@@ -6,20 +6,15 @@ import { slideInAnimation } from './animations';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  animations:[
-    slideInAnimation
-  ]
+  animations: [slideInAnimation],
 })
 export class HomeComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   prepareRoute(outlet: RouterOutlet) {
     // // console.log("檢測路由的變化", outlet)
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
   }
-
 }

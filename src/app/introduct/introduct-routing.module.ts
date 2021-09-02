@@ -9,23 +9,23 @@ const routes: Routes = [
   {
     path: '',
     component: IntroductComponent,
-    children:[
+    children: [
       {
         path: ':id',
         component: RouterQueryComponent,
-        resolve:{
-          query: QueryResolver
-        }
-      }
+        resolve: {
+          query: QueryResolver,
+        },
+      },
     ],
-    resolve:{
-      data_name: IntroductResolver
-    }
-  }
+    resolve: {
+      data_name: IntroductResolver,
+    },
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class IntroductRoutingModule { }
+export class IntroductRoutingModule {}

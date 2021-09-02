@@ -15,43 +15,43 @@ const routes: Routes = [
       {
         path: 'login',
         component: LoginComponent,
-        data:{
-          animation: 'LoginPage'
-        }
+        data: {
+          animation: 'LoginPage',
+        },
       },
       {
         path: 'register',
         component: RegisterComponent,
-        data:{
-          animation: 'RegisterPage'
-        }
+        data: {
+          animation: 'RegisterPage',
+        },
       },
       {
         path: 'intro',
-        loadChildren: () => import('../introduct/introduct.module').then(m => m.IntroductModule)
+        loadChildren: () => import('../introduct/introduct.module').then((m) => m.IntroductModule),
       },
       {
         path: 'dynamicForm',
-        component: DynamicFormComponent
+        component: DynamicFormComponent,
       },
       {
         path: 'home',
         component: ContentComponent,
         data: {
-          animation: 'ContentPage'
-        }
+          animation: 'ContentPage',
+        },
       },
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: '/home'
+        redirectTo: '/dynamicForm',
       },
-    ]
-  }
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class HomeRoutingModule { }
+export class HomeRoutingModule {}

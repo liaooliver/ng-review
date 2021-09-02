@@ -4,17 +4,14 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
+  constructor(private _router: Router) {}
 
-  constructor(private _router:Router) { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   submit() {
-    this._router.navigate(['/login'])
+    this._router.navigate(['/login']);
   }
-
 }
