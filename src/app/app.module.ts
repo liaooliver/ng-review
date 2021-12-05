@@ -8,9 +8,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
+import { GitTestComponent } from './git-test/git-test.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, GitTestComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
